@@ -10,6 +10,7 @@ namespace Welcome
             Console.WriteLine("Welcome to the Employee Wage Problem!");
             //Solution
             int IsFullTime = 1;
+            int IsPartTime = 0;
             int EmpRatePerHour = 20;
 
             int empWage = 0;
@@ -17,18 +18,18 @@ namespace Welcome
 
             Random random = new Random();
             int empCheck = random.Next(0, 2);
-            if (empCheck == IsFullTime)
+            if (empCheck == IsPartTime)
             {
-                Console.WriteLine("Employee is Present.");
+                Console.WriteLine("Part time Employee is Present.");
                 empHr = 8;
             }
             else
             {
-                Console.WriteLine("Employee is Absent!");
+                Console.WriteLine("Part time Employee is Absent!");
                 empHr = 0;
             }
             empWage = empHr * EmpRatePerHour;
-            Console.WriteLine("Employee Wage = " + empWage);
+            Console.WriteLine("Part time Employee Wage = " + empWage);
         }
     }
 }
