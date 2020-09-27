@@ -14,22 +14,27 @@ namespace Welcome
             int EmpRatePerHour = 20;
 
             int empWage = 0;
-            int empHr = 0;
+            int empHr = 8;
+            empWage = empHr * EmpRatePerHour;
 
             Random random = new Random();
-            int empCheck = random.Next(0, 2);
-            if (empCheck == IsPartTime)
+            int empCheck = random.Next(0, 3);
+            switch (empCheck)
             {
-                Console.WriteLine("Part time Employee is Present.");
-                empHr = 8;
+                case 0:
+                    Console.WriteLine("Part time Employee is present");
+                    Console.WriteLine("Part time Employee Wage = " + empWage);
+                    break;
+
+                case 1:
+                    Console.WriteLine("Full time Employee is present");
+                    Console.WriteLine("Full time Employee Wage = " + empWage);
+                    break;
+
+                default:
+                    Console.WriteLine("Neither Full Time nor Part time Employee is present!");
+                    break;
             }
-            else
-            {
-                Console.WriteLine("Part time Employee is Absent!");
-                empHr = 0;
-            }
-            empWage = empHr * EmpRatePerHour;
-            Console.WriteLine("Part time Employee Wage = " + empWage);
         }
     }
 }
